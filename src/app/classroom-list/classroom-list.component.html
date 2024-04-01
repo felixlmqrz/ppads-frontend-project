@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-xs-10">
+        <app-classroom-edit></app-classroom-edit>
+        <hr>
+        <p>Turmas</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Ano</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let classroom of classrooms">
+                    <th scope="row">{{ classroom.id }}</th>
+                    <td>{{ classroom.classYear }}</td>
+                    <td><a href="">Editar</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
