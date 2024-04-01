@@ -11,6 +11,10 @@ import { TeacherListComponent } from './teacher-list/teacher-list.component';
 import { TeacherEditComponent } from './teacher-list/teacher-edit/teacher-edit.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentEditComponent } from './student-list/student-edit/student-edit.component';
+import { AuthComponent } from './auth/auth.component';
+import { FormsModule } from '@angular/forms';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserEditComponent } from './user-list/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +25,16 @@ import { StudentEditComponent } from './student-list/student-edit/student-edit.c
     TeacherListComponent,
     TeacherEditComponent,
     StudentListComponent,
-    StudentEditComponent
+    StudentEditComponent,
+    AuthComponent,
+    UserListComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
+    FormsModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
