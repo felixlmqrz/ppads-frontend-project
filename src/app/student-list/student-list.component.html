@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-xs-10">
+        <app-student-edit></app-student-edit>
+        <hr>
+        <p>Alunos</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Turma</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of students">
+                    <th scope="row">{{ student.id }}</th>
+                    <td>{{ student.studentName }}</td>
+                    <td></td>
+                    <td><a href="">Editar</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

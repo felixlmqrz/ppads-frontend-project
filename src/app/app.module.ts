@@ -7,13 +7,21 @@ import { ClassroomListComponent } from './classroom-list/classroom-list.componen
 import { ClassroomEditComponent } from './classroom-list/classroom-edit/classroom-edit.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { TeacherListComponent } from './teacher-list/teacher-list.component';
+import { TeacherEditComponent } from './teacher-list/teacher-edit/teacher-edit.component';
+import { StudentListComponent } from './student-list/student-list.component';
+import { StudentEditComponent } from './student-list/student-edit/student-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ClassroomListComponent,
-    ClassroomEditComponent
+    ClassroomEditComponent,
+    TeacherListComponent,
+    TeacherEditComponent,
+    StudentListComponent,
+    StudentEditComponent
   ],
   imports: [
     BrowserModule,
