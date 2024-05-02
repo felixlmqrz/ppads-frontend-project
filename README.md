@@ -1,27 +1,33 @@
-# PpadsFrontendProject
+<h1 align=center> PROJETO INTEGRADOR: PRATICA PROFISSIONAL EM ANALISE E DESENVOLVIMENTO DE SISTEMA </h1>
+<p align=center> UNIVERSIDADE PRESBITERIANA MACKENZIE - 2024</p>
+<br>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
+## 📝 Proposta
+Criar um sistema web que faz o gerenciamento de usuários, sendo estes professores, alunos e corpo administrativo, e que realiza o controle de presença de alunos.
 
-## Development server
+* API DE GERENCIAMENTO ESCOLAR
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Como clonar e iniciar a aplicação
 
-## Code scaffolding
+- Abra seu terminal e digite o seguinte comando:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+git clone git@github.com:felixlmqrz/ppads-frontend-project.git
+```
 
-## Build
+- Ainda em seu terminal digite o comando abaixo para entrar na pasta do projeto:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+cd ppads-frontend-project
+```
 
-## Running unit tests
+- Rode localmente:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Execute `ng serve` para um servidor de desenvolvimento. Navegue até `http://localhost:4200/`.
 
-## Running end-to-end tests
+## 👥 Membros do grupo
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- <a href="https://github.com/felixlmqrz">Felix Lima Queiroz</a>
+- <a href="https://github.com/jessicaamorim19">Jessica Campos Fanti Amorim</a>
+- <a href="https://github.com/juliacerejo">Julia Ramires Cerejo</a>
+- <a href="https://github.com/acceberc">Rebecca da Cunha Cruz</a>
