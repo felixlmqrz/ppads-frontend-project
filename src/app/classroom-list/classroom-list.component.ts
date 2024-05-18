@@ -8,7 +8,7 @@ import { ClassroomService } from '../services/classroom.service';
   styleUrl: './classroom-list.component.css'
 })
 export class ClassroomListComponent implements OnInit {
-  classrooms: Classroom[] = [];
+  classrooms: Classroom[];
 
   constructor(private classroomService: ClassroomService) { }
 

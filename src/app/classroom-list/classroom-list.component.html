@@ -1,23 +1,34 @@
 <div class="row">
     <div class="col-xs-10">
-        <app-classroom-edit></app-classroom-edit>
-        <hr>
         <p>Turmas</p>
+        <button type="button" class="btn btn-primary" routerLink="new" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Adicionar
+        </button>
+        <hr>
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Ano</th>
-                    <th scope="col"></th>
+                    <th scope="col">Editar</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let classroom of classrooms">
                     <th scope="row">{{ classroom.id }}</th>
-                    <td>{{ classroom.classYear }}</td>
-                    <td><a href="">Editar</a></td>
+                    <td>{{ classroom.classroomName }}</td>
+                    <td><a href="" [routerLink]="classroom.id" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">Editar</a></td>
                 </tr>
             </tbody>
         </table>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>

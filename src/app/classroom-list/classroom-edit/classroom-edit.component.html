@@ -1,13 +1,17 @@
-<div class="row">
-    <div class="col-xs-12">
-        <form class="row g-3">
-            <div class="col-sm-4 form-group">
-                <label for="year" class="form-label">Ano</label>
-                <input type="text" id="year" class="form-control">
-            </div>
-            <div class="col-sm-12">
-                <button type="submit" class="btn btn-primary">Adicionar</button>
-            </div>
-        </form>
-    </div>
+<div class="modal-header">
+    <h1 class="modal-title fs-5" id="exampleModalLabel">{{ isEditMode ? 'Editar' : 'Adicionar' }}</h1>
+    <button type="button" class="btn-close" routerLink="/" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    <form (ngSubmit)="onSaveClassroom(f)" #f="ngForm">
+        <div class="mb-3">
+            <label for="classroomName" class="col-form-label">Nome da sala de aula:</label>
+            <input type="text" id="classroomName" class="form-control" name="classroomName" [ngModel]="classroomName">
+        </div>
+        <button type="submit" hidden #btn></button>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" routerLink="/" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+    <button type="button" (click)="btn.click()" class="btn btn-primary">Salvar</button>
 </div>

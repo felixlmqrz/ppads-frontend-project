@@ -1,6 +1,5 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { map } from "rxjs";
 import { Classroom } from "../models/classroom.model";
 
 @Injectable({ providedIn: "root" })
@@ -9,19 +8,21 @@ export class ClassroomService {
 
     fetchClassrooms() {
         return this.http
-            .get<{ [key: string]: Classroom }>(
-                'http://localhost:8080/classrooms'
-            )
-            .pipe(
-                map(responseData => {
-                    const classromsArray: Classroom[] = [];
-                    for (const key in responseData) {
-                        if (responseData.hasOwnProperty(key)) {
-                            classromsArray.push({ ...responseData[key], id: key });
-                        }
-                    }
-                    return classromsArray;
-                })
-            );
+            .get<Classroom[]>('http://localhost:8080/classrooms');
+    }
+
+    fetchClassroom(classroomId: string) {
+        return this.http
+            .get<Classroom>('http://localhost:8080/classrooms/' + classroomId);
+    }
+
+    storeClassroom(classroom: Classroom) {
+        return this.http
+            .post<Classroom>('http://localhost:8080/classrooms', classroom);
+    }
+
+    updateClassroom(classroomId: string, classroom: Classroom) {
+        return this.http
+            .put<Classroom>('http://localhost:8080/classrooms/' + classroomId, classroom);
     }
 }
