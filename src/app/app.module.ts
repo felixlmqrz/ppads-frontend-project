@@ -12,9 +12,10 @@ import { TeacherEditComponent } from './teacher-list/teacher-edit/teacher-edit.c
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentEditComponent } from './student-list/student-edit/student-edit.component';
 import { AuthComponent } from './auth/auth.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserEditComponent } from './user-list/user-edit/user-edit.component';
+import { LessonListComponent } from './lesson-list/lesson-list.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +29,15 @@ import { UserEditComponent } from './user-list/user-edit/user-edit.component';
     StudentEditComponent,
     AuthComponent,
     UserListComponent,
-    UserEditComponent
+    UserEditComponent,
+    LessonListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
