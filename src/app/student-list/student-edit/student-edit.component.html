@@ -1,6 +1,6 @@
 <div class="modal-header">
     <h1 class="modal-title fs-5" id="exampleModalLabel">{{ isEditMode ? 'Editar' : 'Adicionar' }}</h1>
-    <button type="button" class="btn-close" routerLink="/" data-bs-dismiss="modal" aria-label="Close"></button>
+    <button type="button" class="btn-close" routerLink="/alunos" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 <div class="modal-body">
     <form (ngSubmit)="onSaveClassroom(f)" #f="ngForm">
@@ -16,6 +16,6 @@
     </form>
 </div>
 <div class="modal-footer">
-    <button type="button" routerLink="/" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+    <button type="button" routerLink="/alunos" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
     <button type="button" (click)="btn.click()" class="btn btn-primary">Salvar</button>
 </div>

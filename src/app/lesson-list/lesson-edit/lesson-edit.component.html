@@ -1,0 +1,51 @@
+<div class="modal-header">
+    <h1 class="modal-title fs-5" id="exampleModalLabel">{{ isEditMode ? 'Editar' : 'Adicionar' }}</h1>
+    <button type="button" class="btn-close" routerLink="/aulas" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="mb-3">
+            <label for="lessonDate" class="col-form-label">Data da aula:</label>
+            <input type="text" id="lessonDate" class="form-control" name="lessonDate" [ngModel]="lessonDate">
+        </div>
+        <div class="mb-3">
+            <label for="subjectId" class="col-form-label">ID da disciplina:</label>
+            <input type="text" id="subjectId" class="form-control" name="subjectId" [ngModel]="subjectId">
+        </div>
+        <div class="mb-3" *ngIf="!isEditMode">
+            <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Adicionar</button>
+        </div>
+    </form>
+    <hr>
+    <p>Comparecimento</p>
+    <form [formGroup]="attendanceForm" (ngSubmit)="onTakeAttendance()">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Presença</th>
+                </tr>
+            </thead>
+            <tbody formArrayName="attendances">
+                <tr *ngFor="let attendanceControl of getControls(); let i = index" [formGroupName]="i">
+                    <td>
+                        {{attendanceControl.value.id}}
+                    </td>
+                    <td>
+                        {{attendanceControl.value.studentName}}
+                    </td>
+                    <td>
+                        <input type="checkbox" id="presence" formControlName="presence" class="form-check-input">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <button type="submit" hidden #btn></button>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" routerLink="/aulas" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+    <button type="button" (click)="btn.click()" class="btn btn-primary">Marcar presenças</button>
+</div>

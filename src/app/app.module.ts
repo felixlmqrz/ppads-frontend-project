@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserEditComponent } from './user-list/user-edit/user-edit.component';
 import { LessonListComponent } from './lesson-list/lesson-list.component';
+import { LessonEditComponent } from './lesson-list/lesson-edit/lesson-edit.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { LessonListComponent } from './lesson-list/lesson-list.component';
     AuthComponent,
     UserListComponent,
     UserEditComponent,
-    LessonListComponent
+    LessonListComponent,
+    LessonEditComponent
   ],
   imports: [
     BrowserModule,

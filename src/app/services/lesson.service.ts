@@ -1,6 +1,5 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { map } from "rxjs";
 import { Lesson } from "../models/lesson.model";
 
 interface lessonData {
@@ -19,23 +18,15 @@ export class LessonService {
 
     fetchLessons() {
         return this.http
-            .get<{ [key: string]: Lesson }>(
-                'http://localhost:8080/lessons'
-            )
-            .pipe(
-                map(responseData => {
-                    const lessonsArray: Lesson[] = [];
-                    for (const key in responseData) {
-                        if (responseData.hasOwnProperty(key)) {
-                            lessonsArray.push({ ...responseData[key], id: key });
-                        }
-                    }
-                    return lessonsArray;
-                })
-            );
+            .get<Lesson[]>('http://localhost:8080/lessons');
     }
 
-    fetchLesson(lessonDate: Date) {
+    fetchLessonById(lessonId: string) {
+        return this.http
+            .get<Lesson>('http://localhost:8080/lessons/' + lessonId);
+    }
+
+    fetchLessonByDate(lessonDate: Date) {
         return this.http
             .get<Lesson[]>('http://localhost:8080/lessons/date/' + lessonDate);
     }

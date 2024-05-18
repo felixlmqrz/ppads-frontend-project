@@ -11,6 +11,7 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nome</th>
+                    <th scope="col">Sala de aula</th>
                     <th scope="col">Editar</th>
                 </tr>
             </thead>
@@ -18,6 +19,7 @@
                 <tr *ngFor="let student of students">
                     <th scope="row">{{ student.id }}</th>
                     <td>{{ student.studentName }}</td>
+                    <td>{{ student.classroom.classroomName }}</td>
                     <td><a href="" [routerLink]="student.id" data-bs-toggle="modal"
                             data-bs-target="#exampleModal">Editar</a></td>
                 </tr>
