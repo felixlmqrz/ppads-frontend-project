@@ -6,6 +6,7 @@ import { StudentListComponent } from './student-list/student-list.component';
 import { AuthComponent } from './auth/auth.component';
 import { LessonListComponent } from './lesson-list/lesson-list.component';
 import { ClassroomEditComponent } from './classroom-list/classroom-edit/classroom-edit.component';
+import { StudentEditComponent } from './student-list/student-edit/student-edit.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'classroom', pathMatch: 'full' },
@@ -15,7 +16,11 @@ const appRoutes: Routes = [
     ]
   },
   { path: 'teacher', component: TeacherListComponent },
-  { path: 'student', component: StudentListComponent },
+  {
+    path: 'student', component: StudentListComponent, children: [
+      { path: ':id', component: StudentEditComponent }
+    ]
+  },
   { path: 'auth', component: AuthComponent },
   { path: 'lesson', component: LessonListComponent }
 ];
