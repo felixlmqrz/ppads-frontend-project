@@ -8,7 +8,7 @@ import { TeacherService } from '../services/teacher.service';
   styleUrl: './teacher-list.component.css'
 })
 export class TeacherListComponent implements OnInit {
-  teachers: Teacher[] = [];
+  teachers: Teacher[];
 
   constructor(private teacherService: TeacherService) { }
 

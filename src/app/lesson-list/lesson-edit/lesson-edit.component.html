@@ -16,8 +16,7 @@
             <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Adicionar</button>
         </div>
     </form>
-    <hr>
-    <p>Comparecimento</p>
+    <p>Comparecimento:</p>
     <form [formGroup]="attendanceForm" (ngSubmit)="onTakeAttendance()">
         <table class="table">
             <thead>
@@ -41,7 +40,6 @@
                 </tr>
             </tbody>
         </table>
-        <hr>
         <button type="submit" hidden #btn></button>
     </form>
 </div>

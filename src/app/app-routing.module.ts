@@ -8,6 +8,7 @@ import { LessonListComponent } from './lesson-list/lesson-list.component';
 import { ClassroomEditComponent } from './classroom-list/classroom-edit/classroom-edit.component';
 import { StudentEditComponent } from './student-list/student-edit/student-edit.component';
 import { LessonEditComponent } from './lesson-list/lesson-edit/lesson-edit.component';
+import { TeacherEditComponent } from './teacher-list/teacher-edit/teacher-edit.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'salas', pathMatch: 'full' },
@@ -16,7 +17,11 @@ const appRoutes: Routes = [
       { path: ':id', component: ClassroomEditComponent }
     ]
   },
-  { path: 'professores', component: TeacherListComponent },
+  {
+    path: 'professores', component: TeacherListComponent, children: [
+      { path: ':id', component: TeacherEditComponent }
+    ]
+  },
   {
     path: 'alunos', component: StudentListComponent, children: [
       { path: ':id', component: StudentEditComponent }

@@ -1,17 +1,26 @@
-<div class="row">
-    <div class="col-xs-12">
-        <form class="row g-3">
-            <div class="col-sm-4 form-group">
-                <label for="name" class="form-label">Nome</label>
-                <input type="text" id="name" class="form-control">
-            </div>
-            <div class="col-sm-4 form-group">
-                <label for="subject" class="form-label">Matéria</label>
-                <input type="text" id="subject" class="form-control">
-            </div>
-            <div class="col-sm-12">
-                <button type="submit" class="btn btn-primary">Adicionar</button>
-            </div>
-        </form>
-    </div>
+<div class="modal-header">
+    <h1 class="modal-title fs-5" id="exampleModalLabel">{{ isEditMode ? 'Editar' : 'Adicionar' }}</h1>
+    <button type="button" class="btn-close" routerLink="/professores" data-bs-dismiss="modal"
+        aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    <form (ngSubmit)="onSaveTeacher(f)" #f="ngForm">
+        <div class="mb-3">
+            <label for="teacherName" class="col-form-label">Nome do professor:</label>
+            <input type="text" id="teacherName" class="form-control" name="teacherName" [ngModel]="teacherName">
+        </div>
+        <div class="mb-3">
+            <label for="subjectName" class="col-form-label">Nome da disciplina:</label>
+            <input type="text" id="subjectName" class="form-control" name="subjectName" [ngModel]="subjectName">
+        </div>
+        <div class="mb-3">
+            <label for="classroomId" class="col-form-label">ID da sala de aula:</label>
+            <input type="text" id="classroomId" class="form-control" name="classroomId" [ngModel]="classroomId">
+        </div>
+        <button type="submit" hidden #btn></button>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" routerLink="/professores" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+    <button type="button" (click)="btn.click()" class="btn btn-primary">Salvar</button>
 </div>

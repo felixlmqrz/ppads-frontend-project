@@ -1,7 +1,13 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { map } from "rxjs";
 import { Teacher } from "../models/teacher.model";
+
+interface teacherData {
+    id?: string;
+    teacherName: string;
+    subjectName: string;
+    classroomId: string;
+}
 
 @Injectable({ providedIn: "root" })
 export class TeacherService {
@@ -9,19 +15,21 @@ export class TeacherService {
 
     fetchTeachers() {
         return this.http
-            .get<{ [key: string]: Teacher }>(
-                'http://localhost:8080/teachers'
-            )
-            .pipe(
-                map(responseData => {
-                    const teachersArray: Teacher[] = [];
-                    for (const key in responseData) {
-                        if (responseData.hasOwnProperty(key)) {
-                            teachersArray.push({ ...responseData[key], id: key });
-                        }
-                    }
-                    return teachersArray;
-                })
-            );
+            .get<Teacher[]>('http://localhost:8080/teachers');
+    }
+
+    fetchTeacher(teacherId: string) {
+        return this.http
+            .get<Teacher>('http://localhost:8080/teachers/' + teacherId);
+    }
+
+    storeTeacher(teacher: teacherData) {
+        return this.http
+            .post<Teacher>('http://localhost:8080/teachers', teacher);
+    }
+
+    updateTeacher(teacherId: string, teacher: teacherData) {
+        return this.http
+            .put<Teacher>('http://localhost:8080/teachers/' + teacherId, teacher);
     }
 }
